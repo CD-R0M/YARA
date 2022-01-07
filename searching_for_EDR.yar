@@ -16,6 +16,18 @@ rule searching_for_EDR {
 		$string10 ="Sophos" nocase
 		$string11 ="Cisco" nocase
 		$string12 ="Fireeye" nocase
+		$string13 = "Crowdstrike" wide
+		$string14 = "Sentinelone" wide
+		$string15 = "Carbon black" wide
+		$string16 = "Cybereason" wide
+		$string17 ="Trend Micro" wide
+		$string18 = "Defender" wide
+		$string19 = "sysmon" wide
+		$string20 ="Symantec" wide
+		$string21 ="Malwarebytes" wide
+		$string22 ="Sophos" wide
+		$string23 ="Cisco" wide
+		$string24 ="Fireeye" wide
 	condition:
 		uint16(0) == 0x5a4d and 3 of them
 }
