@@ -12,5 +12,5 @@ rule potentially_obfuscated_hta {
 		$a3 ="</script>" nocase
 
 	condition:
-		filesize < 2MB and all of ($a*) and math.entropy(0, filesize) >= 7
+		filesize < 2MB and all of ($a*) and math.entropy(0, filesize) >= 5
 }
