@@ -2,7 +2,7 @@ import pe
 rule anti_debugging {
   meta:
     author = "CD_R0M_"
-    description = "Malware authors will often introduct windows API's designed to thwart malware analysis or debugging"
+    description = "Malware authors will often use windows API's designed to thwart malware analysis or debugging. We can search for these API's, with other markers."
     HundredDaysofYara = "6"
   strings:
     $ad1 = "CreateToolhelp32Snapshot"
