@@ -16,18 +16,19 @@ rule searching_for_EDR {
 		$string10 ="Sophos" nocase
 		$string11 ="Cisco" nocase
 		$string12 ="Fireeye" nocase
-		$string13 = "Crowdstrike" wide
-		$string14 = "Sentinelone" wide
-		$string15 = "Carbon black" wide
-		$string16 = "Cybereason" wide
-		$string17 ="Trend Micro" wide
-		$string18 = "Defender" wide
-		$string19 = "sysmon" wide
-		$string20 ="Symantec" wide
-		$string21 ="Malwarebytes" wide
-		$string22 ="Sophos" wide
-		$string23 ="Cisco" wide
-		$string24 ="Fireeye" wide
+		
+		$wide_str1 = "Crowdstrike" wide
+		$wide_str2 = "Sentinelone" wide
+		$wide_str3 = "Carbon black" wide
+		$wide_str4 = "Cybereason" wide
+		$wide_str5 ="Trend Micro" wide
+		$wide_str6 = "Defender" wide
+		$wide_str7 = "sysmon" wide
+		$wide_str8 ="Symantec" wide
+		$wide_str9 ="Malwarebytes" wide
+		$wide_str10 ="Sophos" wide
+		$wide_str11 ="Cisco" wide
+		$wide_str12 ="Fireeye" wide
 	condition:
-		uint16(0) == 0x5a4d and 3 of them
+		uint16(0) == 0x5a4d and (3 of ($string*) or 3 of ($wide_str12))
 }
