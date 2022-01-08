@@ -21,5 +21,5 @@ rule command_and_control {
     $c1 = "ws2_32.dll"
   
   condition:
-   uint16(0) == 0x5a4d and all of ($a*) and 4 of ($b*) and $c1
+   uint16(0) == 0x5a4d and 2 of ($a*) and 4 of ($b*) and $c1
 }
