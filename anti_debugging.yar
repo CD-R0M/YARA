@@ -24,3 +24,4 @@ rule anti_debugging {
     
   condition:
     uint16(0) == 0x5A4D and any of ($ad*) and $imp and (pe.imports("LoadLibraryA", "GetProcAddress") or pe.imports("CreateRemoteThread", "VirtualAllocEx"))
+}
