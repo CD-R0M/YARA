@@ -3,7 +3,7 @@ rule anti_debugging {
   meta:
     author = "CD_R0M_"
     description = "Malware authors will often introduct windows API's designed to thwart malware analysis or debugging"
-    
+    HundredDaysofYara = "6"
   strings:
     $ad1 = "CreateToolhelp32Snapshot"
     $ad2 = "GetTickCount"
