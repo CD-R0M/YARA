@@ -10,13 +10,13 @@ rule suspicious_commands_in_hta {
 		$a2 = "var" nocase
 		$a3 = "</script>" nocase
 
-    $b1 = "ActiveXObject" nocase
-    $b2 = "winmgmts" nocase
-    $b3 = "WScript.Shell" nocase
-    $b4 = "registry" nocase
-    $b5 = "base64" nocase
-    $b6 = "antivirusproduct" nocase
+    		$b1 = "ActiveXObject" nocase
+   		$b2 = "winmgmts" nocase
+    		$b3 = "WScript.Shell" nocase
+    		$b4 = "registry" nocase
+   		$b5 = "base64" nocase
+   		$b6 = "antivirusproduct" nocase
     
 	condition:
-		filesize < 2MB and all of ($a*) and 2 of ($b*)
+		filesize < 5MB and all of ($a*) and 2 of ($b*)
 }
