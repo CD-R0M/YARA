@@ -2,7 +2,7 @@ rule suspicious_commands_in_hta {
 	meta:
 		author = "CD_R0M_"
 		description = ".hta files can run scripting commands that are often leveraged by malware authors to perform malicious actions. Often found in downloads/first stage payloads"
-    HundredDaysofYara = "6"
+    		HundredDaysofYara = "6"
 		hash = "e3716099b4d589e791ab17304e0fced1e5003ef6"
 
 	strings:
