@@ -8,3 +8,4 @@ rule reverse_http {
 		$string1 = "ptth"
 	condition:
 		uint16(0) == 0x5a4d and $string1
+}
