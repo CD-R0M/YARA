@@ -1,7 +1,7 @@
 rule command_and_control {
   meta:
     author = "CD_R0M_"
-    description = "This rule searches for common strings found me malware which reaches out for further network connections. Based on a metasploit sample used by a Ransomware group"
+    description = "This rule searches for common strings found me malware which reaches out for further network connections. Based on a sample used by a Ransomware group, identifed in a recent IR engagement"
     HundredDaysofYara = "7"
     
   strings:
