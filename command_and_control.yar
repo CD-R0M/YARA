@@ -8,16 +8,18 @@ rule command_and_control {
     $a1 = "WSACleanup" nocase
     $a2 = "WSAGetLastError" nocase
     $a3 = "WSAStartup" nocase
-    $a4 = "accept" nocase
-    $a5 = "bind" nocase
-    $a6 = "closesocket" nocase
-    $a7 = "connect" nocase
-    $a8 = "listen" nocase
-    $a9 = "recv" nocase
-    $a10 = "send" nocase
-    $a11 = "socket" nocase
     
-    $b1 = "ws2_32.dll"
+    $b1 = "accept" nocase
+    $b2 = "bind" nocase
+    $b3 = "closesocket" nocase
+    $b4 = "connect" nocase
+    $b5 = "listen" nocase
+    $b6 = "recv" nocase
+    $b7 = "send" nocase
+    $b8 = "socket" nocase
+    
+    $c1 = "ws2_32.dll"
   
   condition:
-   uint16(0) == 0x5a4d and 5 of ($a*) and $b1
+   uint16(0) == 0x5a4d and all of ($a*) and 4 of ($b*) and $c1
+}
