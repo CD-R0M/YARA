@@ -6,9 +6,11 @@ rule Jupyter_infostealer {
     HundredDaysofYara = "10"
 	
   strings:
-	$pdf1 = "sumatraPDF" nocase ascii wide
-	$pdf2 = "EMCO EVALUATION" nocase ascii wide
-
+	$a1 = "sumatraPDF" nocase ascii wide
+	$a2 = "EMCO" nocase ascii wide
+	$a3 = "XML Installer" nocase ascii wide
+	$a4 = "SlimReader" nocase ascii wide
+	
 	$pers = "Startup" nocase ascii wide
 	
 	$reg1 = "classes" nocase ascii wide
@@ -19,5 +21,5 @@ rule Jupyter_infostealer {
 	$pwrshell = "system.text.encoding" nocase ascii wide
 	
   condition:
-    1 of ($pdf*) and $pers and all of ($reg*) and $pwrshell
+    1 of ($a*) and $pers and all of ($reg*) and $pwrshell
 }
