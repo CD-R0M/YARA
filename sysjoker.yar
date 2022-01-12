@@ -8,10 +8,10 @@ rule syjoker {
   strings:
     $masq = "igfxCUIService.exe" nocase wide
 	
-	$txt1 = "txc1.txt" nocase
-	$txt2 = "txc2.txt" nocase
+    $txt1 = "txc1.txt" nocase
+    $txt2 = "txc2.txt" nocase
 	
-	$tmp = /\\temp..\.txt/ nocase
+    $tmp = /\\temp..\.txt/ nocase
 	
   condition:
     $masq and all of ($txt*) and $tmp
