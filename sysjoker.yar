@@ -14,5 +14,5 @@ rule syjoker {
     $tmp = /\\temp..\.txt/ nocase
 	
   condition:
-    $masq and all of ($txt*) and $tmp
+    uint16(0) == 0x5A4D and $masq and all of ($txt*) and $tmp
 }
