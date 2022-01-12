@@ -1,9 +1,9 @@
 rule syjoker {
- 	meta:
-		author = "CD_R0M_"
-		description = "sysjoker malware"
-    hash = "d90d0f4d6dad402b5d025987030cc87c"
-		HundredDaysofYARA = "Day 11"
+   meta:
+     author = "CD_R0M_"
+     description = "Windows sysjoker malware"
+     hash = "d90d0f4d6dad402b5d025987030cc87c"
+     HundredDaysofYARA = "Day 11"
     
   strings:
     $masq = "igfxCUIService.exe" nocase wide
