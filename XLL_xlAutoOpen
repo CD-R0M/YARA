@@ -1,0 +1,16 @@
+import pe
+rule XLL_xlAutoOpen {
+	meta:
+		author = "CD_R0M_"
+		description = "XLL Addin malware. XLL addins can be used for persistence via Microsoft Excel"
+		reference = "https://threatresearch.ext.hp.com/how-attackers-use-xll-malware-to-infect-systems/"
+		hash = "c314c7feeb98de6391da83678e1639aade3fbe9c95846b8c2f2590ea3d34dd4f"
+		HundredDaysofYARA = "Day 12"
+   
+	strings:
+		$a1 = "xlAutoOpen"
+		$a2 = "test"
+		
+	condition:
+		uint16(0) == 0x5A4D and all of them and pe.imports("gdi32.dll", "SetBkMode") and filesize < 20KB
+}
