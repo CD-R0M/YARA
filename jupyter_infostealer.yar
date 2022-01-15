@@ -6,19 +6,19 @@ rule Jupyter_infostealer {
     HundredDaysofYara = "10"
 	
   strings:
-	$a1 = "sumatraPDF" nocase ascii wide
-	$a2 = "EMCO" nocase ascii wide
-	$a3 = "XML Installer" nocase ascii wide
-	$a4 = "SlimReader" nocase ascii wide
+	$a1 = "sumatraPDF" nocase ascii
+	$a2 = "EMCO" nocase ascii
+	$a3 = "XML Installer" nocase ascii
+	$a4 = "SlimReader" nocase ascii
 	
-	$pers = "Startup" nocase ascii wide
+	$pers = "Startup" nocase ascii
 	
-	$reg1 = "classes" nocase ascii wide
-	$reg2 = "shell" nocase ascii wide
-	$reg3 = "open" nocase ascii wide
-	$reg4 = "command" nocase ascii wide
+	$reg1 = "classes" nocase ascii
+	$reg2 = "shell" nocase ascii
+	$reg3 = "open" nocase ascii
+	$reg4 = "command" nocase ascii
 	
-	$pwrshell = "system.text.encoding" nocase ascii wide
+	$pwrshell = "system.text.encoding" nocase ascii
 	
   condition:
     1 of ($a*) and $pers and all of ($reg*) and $pwrshell
