@@ -14,7 +14,7 @@ rule Control_RunDLL {
 		$str8 = "start" nocase
 
 	condition:
-		uint16(0) == 0x5A4D and all of ($str*)
+		uint16(0) == 0x5A4D and all of ($str*) and not pe.imphash() == "fd009773edcd9609debe303429866bca"
 }
 
 rule Control_RunDLL_1DLL {
@@ -34,5 +34,5 @@ rule Control_RunDLL_1DLL {
 	
 		$dll = "1.dll"
 	condition:
-		uint16(0) == 0x5A4D and all of ($str*) and $dll
+		uint16(0) == 0x5A4D and all of ($str*) and $dll  and not pe.imphash() == "fd009773edcd9609debe303429866bca"
 }
