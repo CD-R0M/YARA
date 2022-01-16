@@ -9,7 +9,7 @@ rule stage1_exe_destruct {
   	strings:
 		$a1= "your hard drive has been corrupted." ascii
     		$a2 = "In case you want to recover all hard drives" ascii
-    		$a3 = "1AVNM68gj6PGPFcJuftKATa4WLnzg8fpfv and send message via"
+    		$a3 = "send message via" ascii
 		
 	condition:
 		uint16(0) == 0x5A4D
