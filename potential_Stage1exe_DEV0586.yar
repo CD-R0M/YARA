@@ -3,9 +3,10 @@ import "pe"
 rule potential_Stage1exe_DEV0586 {
 	meta:
 		author = "CD_R0M_"
-		description = "I found a random binary on VT named stage1.exe. Not the binary Microsoft Identified, but my first Golang sample. Looks like an exploit dev testing"
-    hash = "5f84be88bce05dc96fff308e7fab134c8f30bf071e418e44364b616c795605ee"
-		HundredDaysofYARA = "Day 14"
+		description = "Sample identified by @ffforward. Potentially related to Stage1.exe binary microsoft referenced"
+		reference = "https://twitter.com/ffforward/status/1482697016987865096"
+    		hash = "312bbd2041ddd599f1588d2a49da581e518500e21b41c57857dcd12565de247c"
+		HundredDaysofYARA = "Day 15"
 	
   	strings:
 		$a1= {52756e50726f6772616d3d222554454d50255c5374616765312e65786522}
