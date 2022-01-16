@@ -8,7 +8,6 @@ rule random_Stage1exe {
   	strings:
 		$a1= "RedTeam_Malware_Dev"
 		
-
 	condition:
 		uint16(0) == 0x5A4D
 		and $a1
