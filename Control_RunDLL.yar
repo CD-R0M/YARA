@@ -2,7 +2,7 @@ rule Control_RunDLL {
 	meta:
 		author = "CD_R0M_"
 		description = "Control_RunDLL"
-		HundredDaysofYARA = "Day 8"
+		HundredDaysofYARA = "Day 15"
 	strings:
 		$str1 = "Control_RunDLL" nocase
 		$str2 = "DllInstall" nocase
@@ -21,7 +21,7 @@ rule Control_RunDLL_1DLL {
 	meta:
 		author = "CD_R0M_"
 		description = "Control_RunDLL, with 1.dll which was identified in multiple samples"
-		HundredDaysofYARA = "Day 8"
+		HundredDaysofYARA = "Day 15"
 	strings:
 		$str1 = "Control_RunDLL" nocase
 		$str2 = "DllInstall" nocase
