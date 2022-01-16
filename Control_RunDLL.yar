@@ -4,7 +4,7 @@ rule Control_RunDLL {
 		description = "Identify binaries with Control_RunDLL, which can be used by malware to utilize functionality of DLL's"
 		HundredDaysofYARA = "Day 15"
 	strings:
-		$str1 = "Control_RunDLL" nocase
+		$str1 = "Control_RunDLL" nocase fullword
 		$str2 = "DllInstall" nocase
 		$str3 = "DllRegisterServer" nocase
 		$str4 = "DllUnregisterServer" nocase
