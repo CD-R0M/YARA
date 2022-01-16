@@ -2,7 +2,7 @@ import "pe"
 rule Control_RunDLL {
 	meta:
 		author = "CD_R0M_"
-		description = "Identify binaries with Control_RunDLL."
+		description = "Searching for DLL's that utilize specific Control_RunDLL parameters."
 		HundredDaysofYARA = "Day 15"
 	strings:
 		$str1 = "Control_RunDLL" nocase fullword
@@ -15,7 +15,10 @@ rule Control_RunDLL {
 		$str8 = "start" nocase
 
 	condition:
-		uint16(0) == 0x5A4D and all of ($str*) and not pe.imphash() == "fd009773edcd9609debe303429866bca"
+		uint16(0) == 0x5A4D
+		and all of ($str*)
+		and pe.DLL
+		and not (pe.imphash() == "fd009773edcd9609debe303429866bca" or filename == "shell32.dll")
 }
 
 rule Control_RunDLL_1DLL {
