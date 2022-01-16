@@ -1,3 +1,4 @@
+import "pe"
 rule Control_RunDLL {
 	meta:
 		author = "CD_R0M_"
