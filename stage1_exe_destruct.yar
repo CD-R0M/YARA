@@ -1,3 +1,5 @@
+import "pe"
+
 rule stage1_exe_destruct {
 	meta:
 		author = "CD_R0M_"
