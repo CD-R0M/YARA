@@ -9,9 +9,9 @@ rule stage1_exe_destruct {
 		HundredDaysofYARA = "Day 16"
 	
   	strings:
-		$a1= "your hard drive has been corrupted." ascii wide
-    		$a2 = "In case you want to recover all hard drives" ascii wide
-    		$a3 = "send message via" ascii wide
+		$a1= "Your hard drive has been corrupted." nocase ascii
+    		$a2 = "In case you want to recover all hard drives" nocase ascii
+    		$a3 = "send message via" nocase ascii
 		
 	condition:
 		uint16(0) == 0x5A4D
