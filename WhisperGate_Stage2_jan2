@@ -9,7 +9,7 @@ rule Whisper_Gate_stage2_jan22 {
   	strings:
 		$a1= "https://cdn.discordapp.com/attachments/928503440139771947/930108637681184768/Tbopbh.jpg" nocase ascii wide
     		$a2 = "-enc UwB0AGEAcgB0AC" nocase ascii wide
-    		$a3 = "powershell" nocase ascii
+    		$a3 = "powershell" nocase ascii wide
 		
 	condition:
 		uint16(0) == 0x5A4D
