@@ -6,10 +6,10 @@ rule Whisper_Gate_stage3_jan22 {
     		reference = "https://www.microsoft.com/security/blog/2022/01/15/destructive-malware-targeting-ukrainian-organizations"
 		HundredDaysofYARA = "Day 18"
 	
-  strings:
-		     $a1= {460072006b006d006c006b0064006b006400750062006b007a006e0062006b006d00630066002e0064006c006c}
+  	strings:
+		$a1= {460072006b006d006c006b0064006b006400750062006b007a006e0062006b006d00630066002e0064006c006c}
 
 	condition:
-		     uint16(0) == 0x5A4D
-		     and all of ($a*)
+		uint16(0) == 0x5A4D
+		and all of ($a*)
 }
