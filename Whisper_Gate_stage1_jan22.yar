@@ -1,6 +1,6 @@
 import "pe"
 
-rule stage1_exe_destruct {
+rule Whisper_Gate_stage1_jan22 {
 	meta:
 		author = "CD_R0M_"
 		description = "Stage1.exe malware, as reported by Micrososft."
