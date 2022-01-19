@@ -1,0 +1,19 @@
+import "pe"
+
+rule Whisper_Gate_stage2_jan22 {
+	meta:
+		    author = "CD_R0M_"
+		    description = "Stage2.exe Whispergate wiper malware, as reported by Micrososft."
+    		hash = "16525cb2fd86dce842107eb1ba6174b23f188537"
+    		reference = "https://www.microsoft.com/security/blog/2022/01/15/destructive-malware-targeting-ukrainian-organizations"
+		    HundredDaysofYARA = "Day 17"
+	
+  	strings:
+		    $a1= "https://cdn.discordapp.com/attachments/928503440139771947/930108637681184768/Tbopbh.jpg" nocase ascii wide
+    		$a2 = "-enc UwB0AGEAcgB0AC" nocase ascii wide
+    		$a3 = "powershell" nocase ascii
+		
+	condition:
+		uint16(0) == 0x5A4D
+		and all of ($a*)
+}
