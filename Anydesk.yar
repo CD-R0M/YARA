@@ -1,6 +1,6 @@
 import "pe"
 
-rule Anydesk_masquerading {
+rule Anydesk {
 	meta:
              author = "CD_R0M_"
 	     description = "Anydesk is commonly used by threat actors for remote access. This rule aims to identify legitimate anydesk, renamed binaries and trojanized versions."
