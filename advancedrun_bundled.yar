@@ -21,5 +21,5 @@ rule advancedrun_bundled {
 	condition:
 		     uint16(0) == 0x5A4D
 		     and 3 of ($a*)
-			   and all of ($b*)
+		     and all of ($b*)
 }
