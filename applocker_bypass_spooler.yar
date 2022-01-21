@@ -23,7 +23,7 @@ rule applocker_bypass_spooler_imports {
 	HundredDaysofYARA = "Day 21"
 
     condition:
-        uint16(0) == 0x5a4d
+        uint16(0) == 0x5a4d and filesize < 300KB and pe.DLL
 	and pe.imports("ADVAPI32.dll", "DuplicateTokenEx")
 	and pe.imports("ADVAPI32.dll", "LookupPrivilegeValueW")
 	and pe.imports("ADVAPI32.dll", "AdjustTokenPrivileges")
@@ -33,4 +33,5 @@ rule applocker_bypass_spooler_imports {
 	and pe.imports("KERNEL32.dll", "Process32NextW")
 	and pe.imports("KERNEL32.dll", "GetCurrentThreadId")
 	and pe.imports("KERNEL32.dll", "RtlLookupFunctionEntry")
+	and pe.exports("DllRegisterServer")
 }
