@@ -3,7 +3,7 @@ import "pe"
 rule applocker_bypass_spooler {
     meta:
         author = "CD_R0M_"
-	description = "Grzegorz Tworek @0gtweet shared an Applocker bypass, which steals the token from spooler and creates a child process. Only looking for obvious strings here"
+	description = "Grzegorz Tworek @0gtweet shared an Applocker bypass, which steals the token from spooler and creates a child process. Should detect POC"
 	reference = "https://twitter.com/0gtweet/status/1484422524091961347"
 	HundredDaysofYARA = "Day 21"
     strings:
