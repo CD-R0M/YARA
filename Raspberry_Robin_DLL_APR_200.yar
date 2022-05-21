@@ -1,4 +1,4 @@
-rule Raspberry_Robin_DLL_APR_2022 {
+rule Raspberry_Robin_DLL_MAY_2022 {
 	meta:
 		author = "CD_R0M_"
 		description = "Detects DLL dropped by Raspberry Robin."
@@ -23,7 +23,7 @@ rule Raspberry_Robin_DLL_APR_2022 {
 }
 
 
-rule Raspberry_Robin_DLL_APR_2022_2 {
+rule Raspberry_Robin_DLL_MAY_2022_2 {
 	meta:
 		author = "CD_R0M_"
 		description = "Detects DLL dropped by Raspberry Robin. More specific with pdb paths to limit FP."
