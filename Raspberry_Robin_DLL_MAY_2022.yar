@@ -19,7 +19,7 @@ rule Raspberry_Robin_DLL_MAY_2022 {
 		
 		
 	condition:
-		filesize < 2MB and $a1 and 2 of ($b*)
+		uint16(0) == 0x5A4D and filesize < 2MB and $a1 and 2 of ($b*)
 }
 
 
@@ -46,6 +46,6 @@ rule Raspberry_Robin_DLL_MAY_2022_2 {
 		$c2 = "d:\\in\\the\\town\\where\\ahung.pdb"
 		
 	condition:
-		filesize < 2MB and $a1 and 2 of ($b*) and 1 of ($c*)
+		uint16(0) == 0x5A4D and filesize < 2MB and $a1 and 2 of ($b*) and 1 of ($c*)
 }
 
