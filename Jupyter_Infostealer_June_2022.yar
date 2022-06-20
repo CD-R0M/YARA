@@ -27,7 +27,7 @@ rule Jupyter_infostealer_June_2022 {
 	$e2 = "Evaluation" ascii nocase
 	$e3 = "Advanced Installer" ascii nocase
 	$f1 = "EMCO MSI Package Builder" ascii
-      $f2 = "powershell-ep bypass -windowstyle hidden -command" ascii
+      	$f2 = "powershell-ep bypass -windowstyle hidden -command" ascii
 	$f3 = "powershell-ExecutionPolicy bypass"
 	$msi = { D0 CF 11 E0 A1 B1 1A E1 }
   condition:
