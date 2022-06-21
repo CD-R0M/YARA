@@ -29,7 +29,7 @@ rule Jupyter_infostealer_June_2022 {
 	$f2 = "powershell-ExecutionPolicy bypass"
 	$msi = { D0 CF 11 E0 A1 B1 1A E1 }
   condition:
-	(all of ($a*) or all of ($b*) or all of ($c*) or all of ($d*)) or $e1 and 1 of ($f*) and
+	(all of ($a*) or all of ($b*) or all of ($c*) or all of ($d*)) or ($e1 and 1 of ($f*)) and
 	filesize > 7MB and
 	(uint16(0) == 0x5A4D or $msi at 0)
 }
